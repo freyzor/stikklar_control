@@ -1,0 +1,58 @@
+stikklar:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 10  
+
+  # Position Controllers ---------------------------------------
+  rr_femur_bone_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rr_femur_bone_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  rr_coxa_bone_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rr_coxa_bone_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  rr_tibia_bone_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rr_tibia_bone_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  rf_femur_bone_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rf_femur_bone_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  rf_coxa_bone_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rf_coxa_bone_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  rf_tibia_bone_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rf_tibia_bone_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  lr_femur_bone_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: lr_femur_bone_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  lr_coxa_bone_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: lr_coxa_bone_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  lr_tibia_bone_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: lr_tibia_bone_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  lf_femur_bone_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: lf_femur_bone_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  lf_coxa_bone_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: lf_coxa_bone_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  lf_tibia_bone_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: lf_tibia_bone_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}

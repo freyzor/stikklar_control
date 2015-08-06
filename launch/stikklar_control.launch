@@ -1,0 +1,21 @@
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find stikklar_control)/config/stikklar_control.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/stikklar" args="joint_state_controller
+      rr_femur_bone_joint_position_controller rr_coxa_bone_joint_position_controller rr_tibia_bone_joint_position_controller 
+      rf_femur_bone_joint_position_controller rf_coxa_bone_joint_position_controller rf_tibia_bone_joint_position_controller 
+      lr_femur_bone_joint_position_controller lr_coxa_bone_joint_position_controller lr_tibia_bone_joint_position_controller 
+      lf_femur_bone_joint_position_controller lf_coxa_bone_joint_position_controller lf_tibia_bone_joint_position_controller
+      "/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/stikklar/joint_states" />
+  </node>
+
+</launch>
